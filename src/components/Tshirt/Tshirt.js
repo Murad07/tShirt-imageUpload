@@ -44,15 +44,13 @@ const Tshirt = () => {
     }
 
     return (
-        <div className="container">
-            <h1>Hello!! {name.name}</h1>
+        <div className="container pt-3">
             <a href="javascript:;" onClick={modalOpen}>
-                Open Modal
+                Add Text
             </a>
             <Modal show={name.modal} handleClose={modalClose}>
-            <h2>Hello Modal</h2>
+            <h2>Add Your Text</h2>
             <div className="form-group">
-                <label>Enter Name:</label>
                 <input
                 type="text"
                 value={name.modalInputName}
@@ -61,15 +59,15 @@ const Tshirt = () => {
                 className="form-control"
                 />
             </div>
-            <div className="form-group">
-                <button onClick={handleSubmit} type="button">
-                Save
+            <div className="form-group text-center">
+                <button onClick={handleSubmit} type="button" className="btn btn-success">
+                Add
                 </button>
             </div>
             </Modal>
-            <div className="bgImg" style={{ backgroundImage: bgImg, height: "400px"}}>
-                <Draggable >
-                    <div className="dragItem">{myText}</div>
+            <div className="bgImg center" style={{ backgroundImage: bgImg, height: "400px"}}>
+                <Draggable positionOffset={{x: '30%', y: '150%'}}>
+                    <div className="dragItem" style={{fontSize: "25px"}}>{myText}</div>
                 </Draggable>
             </div>
         </div>

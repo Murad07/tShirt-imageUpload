@@ -11,13 +11,15 @@ const ImageUpload = () => {
     const [images, setImages] = useState({});
 
     return (
-        <div>
-            Image
+        <div className="container pt-3">
+            <h3>Upload your images</h3>
             <MultiImageInput
-            images={images}
-            setImages={setImages}
-            cropConfig={{ crop, ruleOfThirds: true }}
-            theme="light" 
+                max={5}
+                images={images}
+                setImages={setImages}
+                allowCrop={false}
+                cropConfig={{ crop, ruleOfThirds: true }}
+                theme="light"
             />
         </div>
     );

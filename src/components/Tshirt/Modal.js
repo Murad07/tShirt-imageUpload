@@ -1,4 +1,5 @@
 import React from "react";
+import './Tshirt.css';
 
 const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal d-block" : "modal d-none";
@@ -7,9 +8,11 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <div className="modal-container">
         {children}
-        <a href="javascript:;" className="modal-close" onClick={handleClose}>
+        <div className="text-right">
+            <a href="javascript:;" className="modal-close btn btn-outline-secondary" onClick={handleClose}>
           close
         </a>
+        </div>
       </div>
     </div>
   );
